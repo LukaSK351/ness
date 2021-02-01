@@ -27,6 +27,13 @@ public class PokecTest {
     }
 
     @Test
+    public void testConnectToPokecUrl(){
+        driver.get(BASE_URL);
+        String URL = driver.getCurrentUrl();
+        Assert.assertEquals(URL, "https://pokec.azet.sk/" );
+    }
+
+    @Test
     public void testPokecLoginBadPass(){
         driver.get(BASE_URL);
         driver.findElement(By.xpath("//button[@aria-label = 'Súhlas']")).click();
